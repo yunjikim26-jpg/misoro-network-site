@@ -66,7 +66,7 @@ function page(route, title, intro, body, ancestors = []) {
   const file = join(output,route,'index.html');
   mkdirSync(dirname(file),{recursive:true});
   writeFileSync(file,`<!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
 <title>${escape(title)} | 미소로한의원</title><meta name="description" content="${escape(intro)}">
 <link rel="stylesheet" href="${root}homepage.css"><link rel="stylesheet" href="${root}network-home.css"><link rel="stylesheet" href="${root}network-details.css"></head>
 <body><a class="skip" href="#content">본문 바로가기</a><header><div class="wrap navigation">${link(root+'network-home.html','미소로한의원','brand')}
