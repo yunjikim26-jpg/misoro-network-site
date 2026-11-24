@@ -1,0 +1,107 @@
+media:
+  input: media
+  output: /media
+
+content:
+  - name: notices
+    label: 공지사항
+    type: collection
+    path: content/notices
+    format: json
+    filename:
+      template: "{year}-{month}-{day}-{hour}-{minute}-{second}-{primary}.json"
+      field: create
+    fields:
+      - {name: title, label: 제목, type: string, required: true}
+      - {name: summary, label: 요약, type: text, required: true}
+      - {name: body, label: 본문, type: text, required: true}
+      - {name: published, label: 웹사이트에 표시, type: boolean}
+      - name: image
+        label: 대표 사진
+        type: image
+        options: {extensions: [jpg, jpeg, png, webp, avif]}
+      - {name: imageAlt, label: 대표 사진 설명, type: string}
+  - name: columns
+    label: 칼럼
+    type: collection
+    path: content/columns
+    format: json
+    filename:
+      template: "{year}-{month}-{day}-{hour}-{minute}-{second}-{primary}.json"
+      field: create
+    fields:
+      - {name: title, label: 제목, type: string, required: true}
+      - {name: summary, label: 요약, type: text, required: true}
+      - {name: body, label: 본문, type: text, required: true}
+      - {name: published, label: 웹사이트에 표시, type: boolean}
+      - name: image
+        label: 대표 사진
+        type: image
+        options: {extensions: [jpg, jpeg, png, webp, avif]}
+      - {name: imageAlt, label: 대표 사진 설명, type: string}
+  - name: programs
+    label: 치료 프로그램
+    type: collection
+    path: content/programs
+    format: json
+    filename:
+      template: "{year}-{month}-{day}-{hour}-{minute}-{second}-{primary}.json"
+      field: create
+    fields:
+      - {name: title, label: 제목, type: string, required: true}
+      - {name: summary, label: 요약, type: text, required: true}
+      - {name: body, label: 본문, type: text, required: true}
+      - {name: published, label: 웹사이트에 표시, type: boolean}
+      - name: image
+        label: 대표 사진
+        type: image
+        options: {extensions: [jpg, jpeg, png, webp, avif]}
+      - {name: imageAlt, label: 대표 사진 설명, type: string}
+  - name: cases
+    label: 치료 전후 사진
+    type: collection
+    path: content/cases
+    format: json
+    filename:
+      template: "{year}-{month}-{day}-{hour}-{minute}-{second}-{primary}.json"
+      field: create
+    fields:
+      - {name: title, label: 제목, type: string, required: true}
+      - {name: summary, label: 요약, type: text, required: true}
+      - {name: body, label: 본문, type: text, required: true}
+      - {name: published, label: 웹사이트에 표시, type: boolean}
+      - name: before
+        label: 치료 전 사진
+        type: image
+        options: {extensions: [jpg, jpeg, png, webp, avif]}
+      - {name: beforeAlt, label: 치료 전 사진 설명, type: string}
+      - name: after
+        label: 치료 후 사진
+        type: image
+        options: {extensions: [jpg, jpeg, png, webp, avif]}
+      - {name: afterAlt, label: 치료 후 사진 설명, type: string}
+      - {name: reviewed, label: 공개 동의 및 의료광고 검토 완료, type: boolean}
+  - name: branches
+    label: 지점 안내
+    type: collection
+    path: content/branches
+    format: json
+    filename:
+      template: "{primary}.json"
+      field: create
+    fields:
+      - {name: title, label: 제목, type: string, required: true}
+      - {name: summary, label: 요약, type: text, required: true}
+      - {name: body, label: 본문, type: text, required: true}
+      - {name: published, label: 웹사이트에 표시, type: boolean}
+      - name: image
+        label: 대표 사진
+        type: image
+        options: {extensions: [jpg, jpeg, png, webp, avif]}
+      - {name: imageAlt, label: 대표 사진 설명, type: string}
+      - {name: phone, label: 전화번호, type: string, required: true}
+      - {name: address, label: 주소, type: string}
+      - {name: hours, label: 진료시간, type: text}
+      - {name: website, label: 공식 지점 URL, type: string}
+      - {name: kakaoUrl, label: 카카오톡 채널 URL, type: string}
+      - {name: naverUrl, label: 네이버 예약 URL, type: string}
