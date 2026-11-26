@@ -96,7 +96,7 @@ def build_home():
            width="1320" height="880"
            alt="진료실에서 원장이 환자와 마주 앉아 상담하는 모습" fetchpriority="high" decoding="async">
       <figcaption class="tagline">
-        <strong>오롯이 바른치료</strong>
+        <strong>바른치료 다른치료</strong>
         <span>미소로한의원</span>
       </figcaption>
     </figure>

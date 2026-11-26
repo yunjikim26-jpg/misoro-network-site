@@ -4,42 +4,47 @@
    변경 범위: 색상 / 폰트 / 간격 / 질감
    ============================================================ */
 :root{
-  /* ---- Brand & Accent : 단일 액센트 (DESIGN.md Do #1) ---- */
-  --primary:#0066cc;            /* Action Blue — 모든 인터랙티브 요소 */
-  --primary-focus:#0071e3;      /* 포커스 링 */
-  --primary-on-dark:#2997ff;    /* 다크 타일 위 링크 */
+  /* ---- Brand & Accent : 단일 액센트 (DESIGN.md Do #1) ----
+     로고(미소로 하늘색 #7ECDEB + 한의원 웜브라운 #6A5D59) 기반.
+     #7ECDEB 원색은 흰 배경 대비 1.78:1 로 인터랙티브 색으로 쓸 수 없어
+     같은 색상(196°)에서 명도만 내린 값을 액센트로 사용하고,
+     원색은 다크 타일 위 링크와 틴트에만 사용합니다. */
+  --primary:#17708F;             /* 로고 하늘색 다크 — 모든 인터랙티브 요소 (흰 5.60:1) */
+  --primary-focus:#135E79;       /* 호버·포커스 링 (흰 7.23:1) */
+  --primary-on-dark:#7ECDEB;     /* 다크 타일 위 링크 = 로고 원색 (9.09:1) */
+  --primary-tint:#EAF6FB;        /* 액센트 틴트 칩 배경 */
 
-  /* ---- Text ---- */
-  --ink:#1d1d1f;
-  --body:#1d1d1f;
+  /* ---- Text : 로고 웜브라운 계열 (14° warm neutral) ---- */
+  --ink:#221D1B;
+  --body:#221D1B;
   --body-on-dark:#ffffff;
-  --body-muted:#cccccc;
-  --ink-muted-80:#333333;
-  --ink-muted-48:#7a7a7a;        /* DESIGN.md: 비활성 버튼 텍스트 전용 */
-  --ink-muted-2:#6e6e73;         /* 보조 텍스트 — WCAG AA 통과용 (white 5.07 / parchment 4.66) */
+  --body-muted:#CFC8C5;
+  --ink-muted-80:#3A3230;
+  --ink-muted-48:#8A7F7A;        /* DESIGN.md: 비활성 버튼 텍스트 전용 */
+  --ink-muted-2:#6B615D;         /* 보조 텍스트 — WCAG AA (흰 6.01 / parchment 5.48) */
 
   /* ---- Hairlines ---- */
-  --divider-soft:#f0f0f0;
-  --hairline:#e0e0e0;
+  --divider-soft:#F2EEEC;
+  --hairline:#E3DEDB;
 
-  /* ---- Surface ---- */
+  /* ---- Surface : 웜 중립 ---- */
   --canvas:#ffffff;
-  --canvas-parchment:#f5f5f7;
-  --surface-pearl:#fafafc;
-  --surface-tile-1:#272729;
-  --surface-tile-2:#2a2a2c;
-  --surface-tile-3:#252527;
+  --canvas-parchment:#F6F4F2;
+  --surface-pearl:#FBFAF9;
+  --surface-tile-1:#24201E;
+  --surface-tile-2:#282322;
+  --surface-tile-3:#211D1C;
   --surface-black:#000000;
-  --surface-chip-translucent:#d2d2d7;
+  --surface-chip-translucent:#D6CFCB;
   --on-primary:#ffffff;
 
   /* ---- 진료 영역 분류색 ----
      인터랙티브 신호가 아닌 데이터 인코딩 전용.
-     DESIGN.md의 단일 액센트 원칙을 지키기 위해 Action Blue와 겹치지 않는
-     저채도 톤으로 조정했으며, 버튼·링크에는 일절 사용하지 않습니다. */
-  --tag-respiratory:#5B6B7C;
-  --tag-skin:#8C7268;
-  --tag-general:#6E7B68;
+     로고 두 색(하늘색/브라운)에서 파생시켜 브랜드 안에 가둔 뒤,
+     액센트와 혼동되지 않도록 채도를 낮췄습니다. 버튼·링크에는 일절 미사용. */
+  --tag-respiratory:#2F6E88;
+  --tag-skin:#74594F;
+  --tag-general:#55614F;
 
   /* ---- Spacing (DESIGN.md spacing scale) ---- */
   --s-xxs:4px; --s-xs:8px; --s-sm:12px; --s-md:17px;
@@ -120,6 +125,16 @@ section{padding:var(--s-xxl) 0}
 .tile-dark .seclabel .num{color:var(--primary-on-dark)}
 .tile-dark .seclabel .en{color:var(--body-muted)}
 .tile-dark .sechead{border-top-color:rgba(255,255,255,.18)}
+/* 다크 타일 위 인터랙티브 색은 로고 원색(--primary-on-dark)으로 전환.
+   --primary(#17708F)는 어두운 배경에서 2.88:1 로 AA 미달이므로 다크 면에서는 사용하지 않음. */
+.tile-dark a:not(.btn),
+.tile-dark .btn-line{color:var(--primary-on-dark)}
+.tile-dark .btn-line{border-color:var(--primary-on-dark);background:transparent}
+.tile-dark .btn-line:hover{border-color:var(--primary-on-dark);color:var(--primary-on-dark);background:rgba(126,205,235,.12)}
+/* 다크 면 위 채움 버튼: #17708F 채움은 타일 대비 2.88:1 로 1.4.11(3:1) 미달.
+   로고 원색을 채움으로, 글자는 타일색으로 반전 (9.09:1). */
+.tile-dark .btn-cta,.cta .btn-cta{background:var(--primary-on-dark);color:var(--surface-tile-1)}
+.tile-dark .btn-cta:hover,.cta .btn-cta:hover{background:var(--primary-on-dark)}
 
 /* ---------- 버튼 ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
@@ -140,7 +155,7 @@ section{padding:var(--s-xxl) 0}
    헤더 — sub-nav-frosted
    ============================================================ */
 .hdr{position:sticky;top:0;z-index:100;
-  background:rgba(245,245,247,.8);
+  background:rgba(246,244,242,.82);
   backdrop-filter:saturate(180%) blur(20px);
   -webkit-backdrop-filter:saturate(180%) blur(20px);
   border-bottom:1px solid rgba(0,0,0,.08)}
@@ -343,6 +358,11 @@ section{padding:var(--s-xxl) 0}
   transition:border-color .18s var(--ease)}
 .bcard:hover{border-color:var(--primary)}
 .bcard-top{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--s-sm)}
+/* 지점 카드 제목 링크의 터치 영역을 카드 전체로 확장 (59x25 → 카드 크기).
+   레이아웃·시각 변화 없음. 하단 전화/자세히 버튼은 z-index로 위에 둠. */
+.bcard{position:relative}
+.bcard h3 a::after{content:"";position:absolute;inset:0;z-index:1}
+.bcard-acts{position:relative;z-index:2}
 .bcard h3{font-size:21px;font-weight:600;line-height:1.19;letter-spacing:0.231px}
 /* badge → button-pearl-capsule */
 .badge{flex:0 0 auto;font-size:12px;font-weight:400;letter-spacing:-0.12px;padding:6px 12px;
@@ -448,7 +468,7 @@ section{padding:var(--s-xxl) 0}
    ============================================================ */
 .mbar{position:fixed;left:0;right:0;bottom:0;z-index:90;height:64px;display:grid;
   grid-template-columns:repeat(3,1fr);
-  background:rgba(245,245,247,.8);
+  background:rgba(246,244,242,.82);
   backdrop-filter:saturate(180%) blur(20px);
   -webkit-backdrop-filter:saturate(180%) blur(20px);
   border-top:1px solid rgba(0,0,0,.08);
@@ -625,7 +645,7 @@ section{padding:var(--s-xxl) 0}
 .radios label:has(input:focus-visible){outline:2px solid var(--primary-focus);outline-offset:3px}
 .consent{display:flex;align-items:flex-start;gap:var(--s-sm);padding:var(--s-md);
   background:var(--surface-pearl);border:1px solid var(--divider-soft);border-radius:var(--r-lg)}
-.consent input{margin-top:4px;width:20px;height:20px;accent-color:var(--primary);flex:0 0 auto}
+.consent input{margin-top:3px;width:24px;height:24px;accent-color:var(--primary);flex:0 0 auto}
 .consent div{font-size:14px;line-height:1.55;letter-spacing:-0.224px;color:var(--ink-muted-80)}
 .consent a{color:var(--primary)}
 .formnote{font-size:14px;line-height:1.55;letter-spacing:-0.224px;color:var(--ink-muted-2)}

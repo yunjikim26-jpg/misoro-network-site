@@ -193,11 +193,11 @@ def about_doctors():
         <img src="{r}assets/img/doctor-portrait.webp"
              srcset="{r}assets/img/doctor-portrait-360.webp 360w, {r}assets/img/doctor-portrait.webp 720w"
              sizes="(min-width:768px) 260px, 100vw" width="720" height="720" loading="lazy" decoding="async"
-             alt="미소로한의원 대표원장 프로필 사진">
-        <figcaption>{need("성명·지점 확인 필요")}</figcaption>
+             alt="미소로한의원 분당점 대표원장 프로필 사진">
+        <figcaption>분당점 대표원장</figcaption>
       </figure>
       <div class="prose">
-        <h2 style="margin-top:0">대표원장</h2>
+        <h2 style="margin-top:0">분당점 대표원장</h2>
         <p>초진부터 마무리까지 한 원장이 맡습니다. 방문하실 때마다 경과를 처음부터 설명하지 않으셔도 되고, 치료 방향이 중간에 바뀌지 않습니다.</p>
         <p>{need("약력 확인 필요")} 졸업 학교, 면허 종류, 학회 활동 등 검증 가능한 항목만 받아 게재합니다.</p>
       </div>

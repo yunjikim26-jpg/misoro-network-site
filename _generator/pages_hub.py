@@ -131,6 +131,27 @@ def branch_ld(b):
 
 
 def build_branch(b):
+    r = rel(2)
+    if b["slug"] == "bundang":
+        doc_block = f"""<div class="docgrid rv">
+      <figure class="docphoto">
+        <img src="{r}assets/img/doctor-portrait.webp"
+             srcset="{r}assets/img/doctor-portrait-360.webp 360w, {r}assets/img/doctor-portrait.webp 720w"
+             sizes="(min-width:768px) 260px, 100vw" width="720" height="720" loading="lazy" decoding="async"
+             alt="미소로한의원 분당점 대표원장 프로필 사진">
+        <figcaption>분당점 대표원장</figcaption>
+      </figure>
+      <div class="prose">
+        <h3 style="margin-top:0">초진부터 마무리까지 한 원장이 맡습니다</h3>
+        <p>방문하실 때마다 경과를 처음부터 설명하지 않으셔도 되고, 치료 방향이 중간에 바뀌지 않습니다.</p>
+        <p>성명과 약력은 {need("확인 후 게재")}. 의료법 제56조 제2항 9호에 따라 법적 근거가 있는 자격·면허만 표기하며, 성명·면허 종류·검증 가능한 약력만 받아 게재합니다.</p>
+      </div>
+    </div>"""
+    else:
+        doc_block = f"""<div class="callout rv">
+      <h3>원장 정보 {need()}</h3>
+      <p>의료법 제56조 제2항 9호에 따라 법적 근거가 있는 자격·면허만 표기할 수 있습니다. 성명, 면허 종류, 검증 가능한 약력만 받아 게재합니다. 사진은 서면 동의 후 사용합니다.</p>
+    </div>"""
     depth = 2
     r = rel(depth)
 
@@ -229,10 +250,7 @@ def build_branch(b):
       <div class="seclabel"><span class="num">03</span><span class="en">Doctor</span></div>
       <h2 class="h1">{esc(b['name'])} 원장</h2>
     </div>
-    <div class="callout rv">
-      <h3>원장 정보 {need()}</h3>
-      <p>의료법 제56조 제2항 9호에 따라 법적 근거가 있는 자격·면허만 표기할 수 있습니다. 성명, 면허 종류, 검증 가능한 약력만 받아 게재합니다. 사진은 서면 동의 후 사용합니다.</p>
-    </div>
+    {doc_block}
   </div>
 </section>
 
