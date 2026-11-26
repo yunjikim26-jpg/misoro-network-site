@@ -188,6 +188,20 @@ def about_doctors():
                  "각 지점은 독립된 대표원장이 진료를 맡습니다.", d)
     body += f"""<section>
   <div class="wrap">
+    <div class="docgrid rv" style="margin-bottom:var(--s-xxl)">
+      <figure class="docphoto">
+        <img src="{r}assets/img/doctor-portrait.webp"
+             srcset="{r}assets/img/doctor-portrait-360.webp 360w, {r}assets/img/doctor-portrait.webp 720w"
+             sizes="(min-width:768px) 260px, 100vw" width="720" height="720" loading="lazy" decoding="async"
+             alt="미소로한의원 대표원장 프로필 사진">
+        <figcaption>{need("성명·지점 확인 필요")}</figcaption>
+      </figure>
+      <div class="prose">
+        <h2 style="margin-top:0">대표원장</h2>
+        <p>초진부터 마무리까지 한 원장이 맡습니다. 방문하실 때마다 경과를 처음부터 설명하지 않으셔도 되고, 치료 방향이 중간에 바뀌지 않습니다.</p>
+        <p>{need("약력 확인 필요")} 졸업 학교, 면허 종류, 학회 활동 등 검증 가능한 항목만 받아 게재합니다.</p>
+      </div>
+    </div>
     <div class="callout rv" style="margin-bottom:var(--s-xxl)">
       <h3>표기 기준</h3>
       <p>의료법 제56조 제2항 9호에 따라 법적 근거가 있는 자격·명칭만 표기할 수 있습니다. 성명, 성별, 면허의 종류, 그리고 검증 가능한 약력만 게재하며, 사진은 서면 동의를 받은 경우에만 사용합니다.</p>

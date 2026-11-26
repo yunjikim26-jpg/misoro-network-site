@@ -99,8 +99,7 @@ def header(depth, active=None):
     return f"""{demobar}<header class="hdr">
   <div class="hdr-in">
     <a class="logo" href="{r if r else "/"}" aria-label="{esc(BRAND['name'])} 홈">
-      <span class="kr">{esc(BRAND['name'])}</span>
-      <span class="en">{esc(BRAND['en'])}</span>
+      <img src="{r}assets/img/logo-wordmark.png" alt="{esc(BRAND['name'])}" width="213" height="36">
     </a>
 
     <nav class="gnb" aria-label="주요 메뉴">
@@ -251,7 +250,7 @@ def footer(depth):
   <div class="wrap">
     <div class="ftr-top">
       <div>
-        <div class="logo"><span class="kr">{esc(BRAND['name'])}</span><span class="en">{esc(BRAND['en'])}</span></div>
+        <img class="ftr-logo" src="{r}assets/img/logo-stacked.png" alt="{esc(BRAND['name'])}" width="150" height="80">
         <p class="ftr-tag">{esc(BRAND['tagline'])}</p>
       </div>
 

@@ -691,3 +691,22 @@ section{padding:var(--s-xxl) 0}
   border-radius:0 var(--r-lg) 0 var(--r-lg)}
 .hero-vis .tagline strong{display:block;font-size:17px;font-weight:600;line-height:1.24;letter-spacing:-0.374px}
 .hero-vis .tagline span{font-size:12px;letter-spacing:-0.12px;color:var(--body-muted)}
+
+/* ---------- 실제 로고 ---------- */
+.logo img{display:block;height:34px;width:auto}
+@media (min-width:768px){.logo img{height:36px}}
+.ftr-logo{display:block;height:72px;width:auto;margin-bottom:var(--s-sm)}
+
+/* ---------- 본문 삽입 사진 ---------- */
+.figure{margin:0 0 var(--s-lg)}
+.figure img{width:100%;height:auto;display:block;border-radius:var(--r-lg);background:var(--surface-pearl)}
+.figure figcaption{margin-top:var(--s-xs);font-size:12px;line-height:1.65;
+  letter-spacing:-0.12px;color:var(--ink-muted-2)}
+
+/* ---------- 의료진 카드 ---------- */
+.docgrid{display:grid;gap:var(--s-lg)}
+@media (min-width:768px){.docgrid{grid-template-columns:260px 1fr;align-items:start;gap:var(--s-xl)}}
+.docphoto{margin:0}
+.docphoto img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;
+  border-radius:var(--r-lg);background:var(--surface-pearl);display:block}
+.docphoto figcaption{margin-top:var(--s-xs);font-size:12px;letter-spacing:-0.12px;color:var(--ink-muted-2)}

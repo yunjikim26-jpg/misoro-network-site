@@ -124,13 +124,25 @@ def build(slug, d):
         <p>{esc(s['p'])}</p>
       </li>""" for s in d["approach"]
     )
+    # 호흡기 계열에는 실제 진료 사진을 넣습니다
+    care_photo = ""
+    if d["cat"] == "respiratory":
+        care_photo = f"""    <figure class="figure rv" style="max-width:720px;margin-bottom:var(--s-xl)">
+      <img src="{r}assets/img/respiratory-care.webp"
+           srcset="{r}assets/img/respiratory-care-660.webp 660w, {r}assets/img/respiratory-care.webp 1320w"
+           sizes="(min-width:768px) 720px, 100vw" width="1320" height="880" loading="lazy" decoding="async"
+           alt="원장이 비경으로 코 점막 상태를 확인하는 진료 장면">
+      <figcaption>초진에서 코 점막의 부종과 분비 상태를 직접 확인합니다.</figcaption>
+    </figure>
+"""
+
     sec_app = f"""<section id="approach">
   <div class="wrap">
     <div class="sechead rv" style="margin-bottom:var(--s-xl)">
       <div class="seclabel"><span class="num">03</span><span class="en">Approach</span></div>
       <h2 class="h1">미소로는 이렇게 봅니다</h2>
     </div>
-    <ol class="steps rv">
+{care_photo}    <ol class="steps rv">
 {steps}
     </ol>
   </div>
