@@ -244,6 +244,7 @@
     "enabled": true,
     "label": "실습용 데모 사이트",
     "note": "이 페이지는 마케팅 교육 실습으로 만든 연습용 사이트입니다. 미소로한의원의 공식 홈페이지가 아니며, 표기된 전화번호는 연결되지 않습니다.",
-    "officialUrl": "https://www.misoro.kr/"
+    "officialUrl": "https://www.misoro.kr/",
+    "banner": false
   }
 }

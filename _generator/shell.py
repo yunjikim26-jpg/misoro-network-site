@@ -89,7 +89,7 @@ def header(depth, active=None):
         mbranch.append(f'<a href="{href}">{esc(b["name"])}</a>')
 
     demobar = ""
-    if DEMO.get("enabled"):
+    if DEMO.get("enabled") and DEMO.get("banner", True):
         demobar = (f'<div class="demobar" role="note">'
                    f'<strong>{esc(DEMO["label"])}</strong> '
                    f'<span>{esc(DEMO["note"])}</span> '
